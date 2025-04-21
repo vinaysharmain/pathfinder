@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AspireMentorHub - Exam Mentorship Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>AspireMentorHub</h1>
+            </div>
+            <div class="auth-buttons">
+                <button id="loginBtn" class="btn-secondary">Login</button>
+                <button id="signupBtn" class="btn-primary">Get Started</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="choice-container">
+                <h1 class="slide-up">Begin Your Success Journey</h1>
+                <p class="hero-subtitle slide-up">Connect with mentors who've walked the path or guide others to success</p>
+                <div class="choice-cards">
+                    <div class="choice-card aspirant-card fade-in" data-role="aspirant">
+                        <i class="fas fa-user-graduate"></i>
+                        <h2>I Want to Clear an Exam</h2>
+                        <ul>
+                            <li>Get personalized guidance from successful candidates</li>
+                            <li>Access proven study strategies and resources</li>
+                            <li>Learn from real experiences and success stories</li>
+                            <li>Track your progress with expert feedback</li>
+                        </ul>
+                        <button class="choice-btn">Start Your Preparation →</button>
+                    </div>
+                    <div class="choice-card mentor-card fade-in" data-role="mentor">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h2>I Have Cleared an Exam</h2>
+                        <ul>
+                            <li>Share your valuable experience and insights</li>
+                            <li>Help aspirants achieve their dreams</li>
+                            <li>Build your mentoring profile and network</li>
+                            <li>Make a meaningful impact in others' lives</li>
+                        </ul>
+                        <button class="choice-btn">Become a Mentor →</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="testimonials-container">
+            <h2>Success Stories</h2>
+            <p class="section-subtitle">Hear from our community members</p>
+            
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h3>Rahul Sharma</h3>
+                            <p>JEE Advanced 2023 - AIR 156</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"The guidance from my mentor was invaluable. Their personalized study plan and regular feedback helped me stay on track and achieve my dream rank."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h3>Priya Patel</h3>
+                            <p>NEET 2023 - AIR 89</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"As a mentor, helping students achieve their medical dreams is incredibly rewarding. The platform makes it easy to connect and share knowledge."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="User" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h3>Arjun Mehta</h3>
+                            <p>UPSC CSE 2022 - Rank 42</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"The structured mentorship program and regular mock tests were crucial in my preparation. My mentor's insights on answer writing made all the difference."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>10,000+</h3>
+                <p>Active Mentors</p>
+            </div>
+            <div class="stat-card">
+                <h3>50,000+</h3>
+                <p>Successful Aspirants</p>
+            </div>
+            <div class="stat-card">
+                <h3>100+</h3>
+                <p>Exam Categories</p>
+            </div>
+            <div class="stat-card">
+                <h3>95%</h3>
+                <p>Satisfaction Rate</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Welcome Back</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" name="password" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+                <div class="form-footer">
+                    <p>Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create Your Account</h2>
+            <div class="progress-indicator">
+                <div class="step active">1. Basic Info</div>
+                <div class="step">2. Role Details</div>
+                <div class="step">3. Finish</div>
+            </div>
+            <form id="signupForm">
+                <div class="form-group full-width">
+                    <label for="userTypeSelect">Select Your Role</label>
+                    <select name="userType" id="userTypeSelect" required>
+                        <option value="">Choose your role</option>
+                        <option value="aspirant">Exam Aspirant</option>
+                        <option value="mentor">Exam Mentor</option>
+                    </select>
+                    <small class="tooltip">Choose whether you want to prepare for an exam or mentor others</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    <small class="tooltip">Enter your complete name as it appears on your documents</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <small class="tooltip">We'll use this for important updates and communication</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    <small class="tooltip">Enter your 10-digit mobile number</small>
+                </div>
+                
+                <!-- Mentor-specific fields -->
+                <div id="mentorFields" style="display: none;">
+                    <h3>Mentor Details</h3>
+                    <div class="form-group">
+                        <label for="clearedExams">Which exam(s) have you cleared?</label>
+                        <input type="text" id="clearedExams" name="clearedExams" placeholder="e.g., JEE Advanced, GATE" required>
+                        <small class="tooltip">List all the exams you have successfully cleared</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="yearCleared">Year of clearing</label>
+                        <input type="number" id="yearCleared" name="yearCleared" min="2000" max="2024" required>
+                        <small class="tooltip">Enter the year you cleared the exam</small>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="successJourney">Share your success journey</label>
+                        <textarea id="successJourney" name="successJourney" placeholder="Tell us about your preparation strategy, challenges faced, and tips for aspirants" required></textarea>
+                        <small class="tooltip">Your experience will help guide other aspirants</small>
+                    </div>
+                </div>
+
+                <!-- Aspirant-specific fields -->
+                <div id="aspirantFields" style="display: none;">
+                    <h3>Exam Details</h3>
+                    <div class="form-group">
+                        <label for="examCategory">Select Exam Category</label>
+                        <select id="examCategory" name="examCategory" required>
+                            <option value="">Choose a category</option>
+                            <option value="engineering">Engineering Exams</option>
+                            <option value="medical">Medical Exams</option>
+                            <option value="civil">Civil Services</option>
+                            <option value="banking">Banking Exams</option>
+                            <option value="defense">Defense Exams</option>
+                            <option value="other">Other Exams</option>
+                        </select>
+                        <small class="tooltip">Select the category of exam you're preparing for</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="specificExam">Select Specific Exam</label>
+                        <select id="specificExam" name="specificExam" required>
+                            <option value="">Choose an exam</option>
+                            <!-- Engineering Exams -->
+                            <optgroup label="Engineering Exams" data-category="engineering">
+                                <option value="jee-main">JEE Main</option>
+                                <option value="jee-advanced">JEE Advanced</option>
+                                <option value="gate">GATE</option>
+                                <option value="btech">B.Tech Entrance Exams</option>
+                            </optgroup>
+                            <!-- Medical Exams -->
+                            <optgroup label="Medical Exams" data-category="medical">
+                                <option value="neet">NEET</option>
+                                <option value="aiims">AIIMS</option>
+                                <option value="mbbs">MBBS Entrance Exams</option>
+                            </optgroup>
+                            <!-- Civil Services -->
+                            <optgroup label="Civil Services" data-category="civil">
+                                <option value="upsc">UPSC Civil Services</option>
+                                <option value="state-psc">State PSC Exams</option>
+                            </optgroup>
+                            <!-- Banking Exams -->
+                            <optgroup label="Banking Exams" data-category="banking">
+                                <option value="ibps">IBPS PO/Clerk</option>
+                                <option value="sbi">SBI PO/Clerk</option>
+                                <option value="rbi">RBI Grade B</option>
+                            </optgroup>
+                            <!-- Defense Exams -->
+                            <optgroup label="Defense Exams" data-category="defense">
+                                <option value="nda">NDA</option>
+                                <option value="cds">CDS</option>
+                                <option value="afcat">AFCAT</option>
+                            </optgroup>
+                            <!-- Other Exams -->
+                            <optgroup label="Other Exams" data-category="other">
+                                <option value="cat">CAT (MBA)</option>
+                                <option value="clat">CLAT (Law)</option>
+                                <option value="ca">CA Foundation</option>
+                            </optgroup>
+                        </select>
+                        <small class="tooltip">Select the specific exam you're preparing for</small>
+                    </div>
+
+                    <div id="examDetails" style="display: none;">
+                        <h3>Exam Information</h3>
+                        <div id="examInfo"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="examDate">When do you plan to take the exam?</label>
+                        <input type="date" id="examDate" name="examDate" required>
+                        <small class="tooltip">Select your target exam date</small>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="helpNeeded">What kind of help are you looking for?</label>
+                        <textarea id="helpNeeded" name="helpNeeded" placeholder="e.g., Subject-specific guidance, study schedule, motivation, etc." required></textarea>
+                        <small class="tooltip">Describe the specific areas where you need guidance</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <small class="tooltip">Password must be at least 8 characters long</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <small class="tooltip">Re-enter your password to confirm</small>
+                </div>
+
+                <button type="submit" class="btn-primary">Create Account</button>
+            </form>
+            <div class="form-footer">
+                <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h2>AspireMentorHub</h2>
+                    <p>Your journey to success starts here</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Platform</h3>
+                        <ul>
+                            <li><a href="#">How It Works</a></li>
+                            <li><a href="#">Success Stories</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Testimonials</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#">Study Materials</a></li>
+                            <li><a href="#">Exam Calendar</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">FAQs</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 AspireMentorHub. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
